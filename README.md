@@ -10,7 +10,7 @@ Está construido con **React** a través de **Vite** y estilizado con **Tailwind
 Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
 - **Node.js:** Versión 18.x o superior  
-- **npm:** (Normalmente se instala junto con Node.js)  
+- **npm:** (se instala junto con Node.js)  
 - **Tailwind CSS:** Versión 3  
 
 ---
