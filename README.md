@@ -15,11 +15,3 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
 ---
 
-## Instalación
-
-Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
-
-1. **Clona el repositorio**
-
-   ```bash
-   git clone --single-branch --branch feature/diseño-inicial-casino https://github.com/MiguelCarvajalCampos/CasinoUls.git
