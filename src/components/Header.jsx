@@ -55,6 +55,14 @@ const Header = () => {
             >
               Contacto
             </button>
+            {/* NUEVO - Enlace al Buzón de Sugerencias */}
+            <Link to="/contacto" className="transition-colors hover:text-gray-300">
+              Sugerencias
+            </Link>
+            {/* NUEVO - Enlace al Panel de Gestión */}
+            <Link to="/admin" className="transition-colors hover:text-gray-300">
+              Gestión
+            </Link>
           </div>
 
           {/*Botón hamburguesa móvil*/}
@@ -136,6 +144,22 @@ const Header = () => {
             >
               Contacto
             </button>
+            {/* NUEVO - Enlace al Buzón de Sugerencias (móvil) */}
+            <Link
+              to="/contacto"
+              onClick={closeAllMenus}
+              className="hover:text-gray-300"
+            >
+              Sugerencias
+            </Link>
+            {/* NUEVO - Enlace al Panel de Gestión (móvil) */}
+            <Link
+              to="/admin"
+              onClick={closeAllMenus}
+              className="hover:text-gray-300"
+            >
+              Gestión
+            </Link>
           </div>
         </div>
       </header>
