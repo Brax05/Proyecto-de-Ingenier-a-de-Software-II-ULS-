@@ -1,6 +1,7 @@
 # Proyecto Casino ULS (Frontend)
 
-Este es un proyecto frontend que replica la página del menú del casino de la Universidad de La Serena. Está construido con **React** a través de **Vite** y estilizado con el framework de CSS **Tailwind CSS**.
+Este es un proyecto frontend que replica la página del menú del casino de la Universidad de La Serena.  
+Está construido con **React** a través de **Vite** y estilizado con **Tailwind CSS**.
 
 ---
 
@@ -8,50 +9,9 @@ Este es un proyecto frontend que replica la página del menú del casino de la U
 
 Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
-* **Node.js:** Versión 18.x o superior.
-* **npm:** (Normalmente se instala junto con Node.js).
+- **Node.js:** Versión 18.x o superior  
+- **npm:** (se instala junto con Node.js)  
+- **Tailwind CSS:** Versión 3  
 
 ---
 
-## Instalación
-
-Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
-
-1.  **Clona el repositorio**
-    ```bash
-    git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
-    cd tu-repositorio
-    ```
-    *(Reemplaza la URL por la de tu repositorio)*
-
-2.  **Instala las dependencias**
-    Este comando leerá el archivo `package.json` e instalará todas las librerías necesarias (React, Tailwind, etc.) en la carpeta `node_modules`.
-    ```bash
-    npm install
-    ```
-
-3.  **Inicia el servidor de desarrollo**
-    Una vez instaladas las dependencias, puedes iniciar la aplicación.
-    ```bash
-    npm run dev
-    ```
-
-La aplicación estará corriendo en [http://localhost:5173](http://localhost:5173).
-
----
-
-## Scripts Disponibles
-
-En este proyecto, puedes ejecutar los siguientes comandos:
-
-* **`npm run dev`**: Inicia la aplicación en modo de desarrollo con recarga en caliente.
-* **`npm run build`**: Compila la aplicación para producción en la carpeta `dist`.
-* **`npm run preview`**: Sirve localmente la compilación de producción para previsualizarla.
-
----
-
-## Tecnologías Utilizadas
-
-* **Vite:** Herramienta de compilación y servidor de desarrollo rápido.
-* **React:** Biblioteca para construir interfaces de usuario.
-* **Tailwind CSS:** Framework de CSS "utility-first" para un estilizado rápido y personalizable.
