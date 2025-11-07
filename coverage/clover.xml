@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1762483148487" clover="3.2.0">
+  <project timestamp="1762483148487" name="All files">
+    <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="10" elements="39" coveredelements="39" complexity="0" loc="23" ncloc="23" packages="2" files="7" classes="7"/>
+    <package name="assets">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="logo-dgae.png" path="C:\Users\Cristhian\Desktop\casino uls front + back\Proyecto-de-Ingenier-a-de-Software-II-ULS-\src\assets\logo-dgae.png">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="logo.png" path="C:\Users\Cristhian\Desktop\casino uls front + back\Proyecto-de-Ingenier-a-de-Software-II-ULS-\src\assets\logo.png">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="uls_logo.png" path="C:\Users\Cristhian\Desktop\casino uls front + back\Proyecto-de-Ingenier-a-de-Software-II-ULS-\src\assets\uls_logo.png">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="components">
+      <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="10"/>
+      <file name="Footer.jsx" path="C:\Users\Cristhian\Desktop\casino uls front + back\Proyecto-de-Ingenier-a-de-Software-II-ULS-\src\components\Footer.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+      <file name="Header.jsx" path="C:\Users\Cristhian\Desktop\casino uls front + back\Proyecto-de-Ingenier-a-de-Software-II-ULS-\src\components\Header.jsx">
+        <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="16" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="14" count="16" type="stmt"/>
+        <line num="16" count="16" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="21" count="16" type="stmt"/>
+        <line num="53" count="3" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="140" count="1" type="stmt"/>
+        <line num="141" count="1" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+      </file>
+      <file name="InstagramIcon.jsx" path="C:\Users\Cristhian\Desktop\casino uls front + back\Proyecto-de-Ingenier-a-de-Software-II-ULS-\src\components\InstagramIcon.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+      </file>
+      <file name="Modal.jsx" path="C:\Users\Cristhian\Desktop\casino uls front + back\Proyecto-de-Ingenier-a-de-Software-II-ULS-\src\components\Modal.jsx">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
