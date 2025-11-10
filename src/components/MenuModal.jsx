@@ -1,5 +1,5 @@
 //src/components/MealDetailModal.jsx
-//Modal con detalles del plato seleccionado.
+//Modal con detalles del plato seleccionado y etiquetas dietéticas.
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -55,6 +55,35 @@ const MealDetailModal = ({ isOpen, onClose, meal }) => {
             <div className="p-6">
               <h2 className="mb-2 text-3xl font-bold">{meal.day}</h2>
               <p className="mb-4 text-xl text-gray-300">{meal.dish}</p>
+
+              {/* Etiquetas Dietéticas */}
+              {meal.dietaryTags && (
+                <div className="mb-4">
+                  <h3 className="text-sm font-semibold text-gray-400 mb-2">
+                    Opciones Dietéticas Disponibles:
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {meal.dietaryTags.vegan && (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-600 text-white">
+                        🌱 Vegano
+                      </span>
+                    )}
+                    {meal.dietaryTags.vegetarian && (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-500 text-white">
+                        🥗 Vegetariano
+                      </span>
+                    )}
+                    {meal.dietaryTags.glutenFree && (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-600 text-white">
+                        🌾 Sin Gluten
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2">
+                    * Opción vegana disponible para todos los menús por reglamento universitario
+                  </p>
+                </div>
+              )}
 
               <div className="space-y-2 border-t border-gray-700 pt-4 text-left">
                 <p>

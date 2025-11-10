@@ -18,7 +18,10 @@ const Admin = () => {
       date: '2025-11-03',
       main: 'Cazuela de Vacuno',
       side: 'Ensalada Mixta',
-      dessert: 'Fruta de Estación'
+      dessert: 'Fruta de Estación',
+      vegan: true,
+      vegetarian: false,
+      glutenFree: true
     },
     {
       id: 2,
@@ -26,7 +29,10 @@ const Admin = () => {
       date: '2025-11-04',
       main: 'Pollo al Horno',
       side: 'Arroz Primavera',
-      dessert: 'Jalea'
+      dessert: 'Jalea',
+      vegan: true,
+      vegetarian: true,
+      glutenFree: false
     }
   ]);
 
@@ -40,7 +46,10 @@ const Admin = () => {
     date: '',
     main: '',
     side: '',
-    dessert: ''
+    dessert: '',
+    vegan: true,        // Siempre true por defecto (reglamento)
+    vegetarian: false,
+    glutenFree: false
   });
 
   // Manejo de login
@@ -84,7 +93,16 @@ const Admin = () => {
         ...newMenu
       };
       setMenus([...menus, menu]);
-      setNewMenu({ day: '', date: '', main: '', side: '', dessert: '' });
+      setNewMenu({ 
+        day: '', 
+        date: '', 
+        main: '', 
+        side: '', 
+        dessert: '',
+        vegan: true,
+        vegetarian: false,
+        glutenFree: false
+      });
       setIsAdding(false);
     } else {
       alert('Por favor completa todos los campos');
@@ -183,7 +201,7 @@ const Admin = () => {
           <div className="mb-8">
             <button
               onClick={() => setIsAdding(!isAdding)}
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center"
+              className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center"
             >
               <Plus className="mr-2 h-5 w-5" />
               Agregar Nuevo Menú
@@ -200,7 +218,7 @@ const Admin = () => {
                   <select
                     value={newMenu.day}
                     onChange={(e) => setNewMenu({ ...newMenu, day: e.target.value })}
-                    className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-gray-500"
                   >
                     <option value="">Seleccionar</option>
                     <option value="Lunes">Lunes</option>
@@ -253,7 +271,7 @@ const Admin = () => {
               <div className="flex gap-4 mt-6">
                 <button
                   onClick={handleAddMenu}
-                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition flex items-center"
+                  className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition flex items-center"
                 >
                   <Save className="mr-2 h-5 w-5" />
                   Guardar
@@ -324,10 +342,47 @@ const Admin = () => {
                         />
                       </div>
                     </div>
+                    
+                    {/* Etiquetas Dietéticas en Edición */}
+                    <div className="mt-4">
+                      <label className="block text-white font-semibold mb-3">Opciones Dietéticas</label>
+                      <div className="space-y-2">
+                        <label className="flex items-center text-gray-300">
+                          <input
+                            type="checkbox"
+                            checked={editingMenu.vegan || true}
+                            disabled
+                            className="mr-2 h-4 w-4 rounded opacity-50 cursor-not-allowed"
+                          />
+                          <span className="flex items-center">
+                            🌱 Vegano 
+                            <span className="text-xs text-gray-500 ml-2">(Siempre disponible)</span>
+                          </span>
+                        </label>
+                        <label className="flex items-center text-gray-300 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={editingMenu.vegetarian || false}
+                            onChange={(e) => setEditingMenu({ ...editingMenu, vegetarian: e.target.checked })}
+                            className="mr-2 h-4 w-4 rounded"
+                          />
+                          🥗 Vegetariano
+                        </label>
+                        <label className="flex items-center text-gray-300 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={editingMenu.glutenFree || false}
+                            onChange={(e) => setEditingMenu({ ...editingMenu, glutenFree: e.target.checked })}
+                            className="mr-2 h-4 w-4 rounded"
+                          />
+                          🌾 Sin Gluten
+                        </label>
+                      </div>
+                    </div>
                     <div className="flex gap-4 mt-6">
                       <button
                         onClick={handleSaveEdit}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition flex items-center"
+                        className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition flex items-center"
                       >
                         <Save className="mr-2 h-5 w-5" />
                         Guardar Cambios
@@ -355,7 +410,7 @@ const Admin = () => {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(menu)}
-                          className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition"
+                          className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition"
                         >
                           <Edit className="h-5 w-5" />
                         </button>
@@ -371,6 +426,28 @@ const Admin = () => {
                       <p><span className="font-semibold text-white">Plato Principal:</span> {menu.main}</p>
                       <p><span className="font-semibold text-white">Acompañamiento:</span> {menu.side}</p>
                       <p><span className="font-semibold text-white">Postre:</span> {menu.dessert}</p>
+                      
+                      {/* Etiquetas Dietéticas */}
+                      <div className="mt-3">
+                        <span className="font-semibold text-white">Opciones Dietéticas: </span>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {(menu.vegan !== false) && (
+                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-600 text-white">
+                              🌱 Vegano
+                            </span>
+                          )}
+                          {menu.vegetarian && (
+                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-500 text-white">
+                              🥗 Vegetariano
+                            </span>
+                          )}
+                          {menu.glutenFree && (
+                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-amber-600 text-white">
+                              🌾 Sin Gluten
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
