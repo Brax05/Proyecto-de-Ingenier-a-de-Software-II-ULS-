@@ -1,0 +1,16 @@
+﻿node_modules/
+dist/
+build/
+.vscode/
+.env
+*.env
+*.log
+.DS_Store
+.vite/
+coverage/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
