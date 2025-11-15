@@ -1,23 +1,25 @@
-//src/components/MapPane.jsx
-//Muestra un mapa de Google centrado en las coordenadas recibidas.
+//src/components/MapPanel.jsx
+//Panel para mostrar el mapa de ubicación
 
-export default function MapPane({ lat, lng, zoom = 16 }) {
-  const src =
-    lat && lng
-      ? `https://www.google.com/maps?q=${lat},${lng}&hl=es&z=${zoom}&output=embed`
-      : `https://www.google.com/maps?q=Universidad%20de%20La%20Serena&hl=es&z=14&output=embed`;
+import React from 'react';
 
+const MapPanel = ({ ubicacion }) => {
   return (
-    <div className="h-[420px] w-full overflow-hidden rounded-3xl border-4 border-slate-900/80 bg-white shadow-xl md:h-[560px]">
-      <iframe
-        key={`${lat ?? 'uls'},${lng ?? 'uls'}`} //fuerza recarga al cambiar coordenadas
-        title="Mapa casinos ULS"
-        src={src}
-        className="h-full w-full border-0"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        allowFullScreen
-      />
+    <div className="rounded-lg border border-gray-700 bg-gray-800 p-4">
+      <h3 className="mb-3 text-lg font-bold text-white">Ubicación</h3>
+      <div className="aspect-video overflow-hidden rounded-lg">
+        <iframe
+          src={ubicacion}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
   );
-}
+};
+
+export default MapPanel;
