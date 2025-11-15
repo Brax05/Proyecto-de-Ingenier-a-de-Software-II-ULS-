@@ -1,73 +1,126 @@
 //src/data/menu.js
-//Datos del menú semanal
+//Datos del menú semanal con imágenes, detalles nutricionales y etiquetas dietéticas.
 
-export const menuSemanal = {
-  lunes: {
-    entrada: 'Ensalada mixta',
-    principal: 'Pollo al horno con papas',
-    postre: 'Fruta de estación',
-    precio: 3500
-  },
-  martes: {
-    entrada: 'Sopa de verduras',
-    principal: 'Pescado a la plancha con arroz',
-    postre: 'Gelatina',
-    precio: 3800
-  },
-  miercoles: {
-    entrada: 'Ensalada César',
-    principal: 'Carne mechada con puré',
-    postre: 'Flan',
-    precio: 4000
-  },
-  jueves: {
-    entrada: 'Crema de zapallo',
-    principal: 'Pollo con fideos',
-    postre: 'Fruta de estación',
-    precio: 3500
-  },
-  viernes: {
-    entrada: 'Ensalada verde',
-    principal: 'Cazuela de vacuno',
-    postre: 'Mousse de chocolate',
-    precio: 4200
-  }
-};
+import pollo from '../assets/pollo-arroz.jpg';
+import pure from '../assets/pure-lomo.jpg';
+import carne from '../assets/carne-fideos.jpg';
+import strogonoff from '../assets/strogonoff.jpg';
+import chuleta from '../assets/chuleta-arroz.jpg';
 
-export const colaciones = [
+export const menuDelDia = [
   {
-    id: 1,
-    nombre: 'Sándwich de Pollo',
-    descripcion: 'Pan integral con pollo, lechuga y tomate',
-    precio: 2500,
-    categoria: 'Sándwiches'
+    day: 'LUNES',
+    dish: 'Pollo al horno con arroz',
+    imageSrc: pollo,
+    details: {
+      salad: 'Ensalada de lechuga y tomate',
+      fruit: 'Manzana',
+      dessert: 'Jalea de frambuesa',
+      calories: 750,
+      price: 2500,
+    },
+    // Etiquetas dietéticas
+    dietaryTags: {
+      vegan: true,        // Siempre disponible por reglamento
+      vegetarian: false,  // No siempre disponible
+      glutenFree: true,   // Ejemplo: este plato sí tiene opción sin gluten
+    },
   },
   {
-    id: 2,
-    nombre: 'Empanada de Queso',
-    descripcion: 'Empanada horneada rellena de queso',
-    precio: 1800,
-    categoria: 'Empanadas'
+    day: 'MARTES',
+    dish: 'Puré con lomo de cerdo',
+    imageSrc: pure,
+    details: {
+      salad: 'Ensalada de repollo',
+      fruit: 'Pera',
+      dessert: 'Flan de vainilla',
+      calories: 820,
+      price: 2500,
+    },
+    dietaryTags: {
+      vegan: true,
+      vegetarian: true,   // Este sí tiene opción vegetariana
+      glutenFree: false,  // Este no tiene opción sin gluten
+    },
   },
   {
-    id: 3,
-    nombre: 'Jugo Natural',
-    descripcion: 'Jugo natural de frutas de estación',
-    precio: 1200,
-    categoria: 'Bebidas'
+    day: 'MIÉRCOLES',
+    dish: 'Carne molida con fideos',
+    imageSrc: carne,
+    details: {
+      salad: 'Ensalada chilena',
+      fruit: 'Naranja',
+      dessert: 'Sémola con leche',
+      calories: 780,
+      price: 2500,
+    },
+    dietaryTags: {
+      vegan: true,
+      vegetarian: false,
+      glutenFree: false,  // Los fideos normales contienen gluten
+    },
   },
   {
-    id: 4,
-    nombre: 'Café con Leche',
-    descripcion: 'Café recién preparado con leche',
-    precio: 1000,
-    categoria: 'Bebidas'
+    day: 'JUEVES',
+    dish: 'Strogonoff de vacuno con papas al romero',
+    imageSrc: strogonoff,
+    details: {
+      salad: 'Ensalada de betarraga',
+      fruit: 'Plátano',
+      dessert: 'Macedonia',
+      calories: 850,
+      price: 2500,
+    },
+    dietaryTags: {
+      vegan: true,
+      vegetarian: true,
+      glutenFree: true,
+    },
   },
   {
-    id: 5,
-    nombre: 'Ensalada de Frutas',
-    descripcion: 'Mix de frutas frescas de estación',
-    precio: 1500,
-    categoria: 'Postres'
-  }
+    day: 'VIERNES',
+    dish: 'Chuleta de cerdo con arroz',
+    imageSrc: chuleta,
+    details: {
+      salad: 'Ensalada de apio palta',
+      fruit: 'Uva',
+      dessert: 'Leche asada',
+      calories: 800,
+      price: 2500,
+    },
+    dietaryTags: {
+      vegan: true,
+      vegetarian: false,
+      glutenFree: true,
+    },
+  },
 ];
+
+// ============================================
+// ESTRUCTURA PARA BASE DE DATOS (Referencia)
+// ============================================
+/*
+En base de datos, cada menú debería tener una estructura similar:
+
+CREATE TABLE menus (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  day VARCHAR(20) NOT NULL,
+  dish VARCHAR(255) NOT NULL,
+  image_url VARCHAR(500),
+  salad VARCHAR(255),
+  fruit VARCHAR(100),
+  dessert VARCHAR(100),
+  calories INT,
+  price INT,
+  vegan BOOLEAN DEFAULT TRUE,      -- Siempre TRUE por reglamento
+  vegetarian BOOLEAN DEFAULT FALSE,
+  gluten_free BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+Ejemplo de INSERT:
+INSERT INTO menus (day, dish, salad, fruit, dessert, calories, price, vegan, vegetarian, gluten_free)
+VALUES ('LUNES', 'Pollo al horno con arroz', 'Ensalada de lechuga y tomate', 'Manzana', 'Jalea de frambuesa', 750, 2500, TRUE, FALSE, TRUE);
+
+*/

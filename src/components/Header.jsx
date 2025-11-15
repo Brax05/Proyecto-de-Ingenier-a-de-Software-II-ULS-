@@ -46,7 +46,9 @@ const Header = () => {
             <Link to="/personal" className="transition-colors hover:text-gray-300">
               Nuestra historia
             </Link>
-
+            <Link to="/noticia" className="transition-colors hover:text-gray-300">
+              Noticias
+            </Link>
             <button
               onClick={() => setIsModalOpen(true)}
               className="transition-colors hover:text-gray-300"
@@ -126,7 +128,13 @@ const Header = () => {
             >
               Nuestra historia
             </Link>
-
+            <Link
+              to="/noticia"
+              onClick={closeAllMenus}
+              className="hover:text-gray-300"
+            >
+              Noticias
+            </Link>
             <button
               onClick={() => {
                 setIsModalOpen(true);
